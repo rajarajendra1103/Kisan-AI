@@ -1,0 +1,9 @@
+{
+  "name": "Kisan AI",
+  "description": "An AI-powered tool for farmers providing real-time advice on crop management, disease diagnosis, yield prediction, weather alerts, and market insights. Features voice-first interaction and a community forum.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
