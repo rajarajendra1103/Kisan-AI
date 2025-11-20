@@ -1,13 +1,14 @@
+
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { FeatureComponentProps, MockUser, ChatRoom, DirectMessage } from '../types';
 import { Search, MessageCircle, Users, Send, Mic, Volume2, WifiOff, CheckCheck, X } from "lucide-react";
 
 // --- MOCK DATA ---
 const mockUsers: MockUser[] = [
-    { id: 'user_2', full_name: 'Aarav Sharma', initials: 'AS', profile_image: 'https://i.pravatar.cc/150?u=user2', user_type: 'farmer', location: 'Jaipur', state: 'Rajasthan', preferred_language: 'hindi' },
-    { id: 'user_3', full_name: 'Priya Patel', initials: 'PP', profile_image: 'https://i.pravatar.cc/150?u=user3', user_type: 'guide', location: 'Ahmedabad', state: 'Gujarat', preferred_language: 'english' },
-    { id: 'user_4', full_name: 'Rohan Gupta', initials: 'RG', profile_image: 'https://i.pravatar.cc/150?u=user4', user_type: 'shop_owner', location: 'Mumbai', state: 'Maharashtra', preferred_language: 'marathi' },
-    { id: 'user_5', full_name: 'Sneha Reddy', initials: 'SR', profile_image: 'https://i.pravatar.cc/150?u=user5', user_type: 'farmer', location: 'Hyderabad', state: 'Telangana', preferred_language: 'telugu' },
+    { id: 'user_2', full_name: 'Aarav Sharma', initials: 'AS', profile_image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop', user_type: 'farmer', location: 'Jaipur', state: 'Rajasthan', preferred_language: 'hindi' },
+    { id: 'user_3', full_name: 'Priya Patel', initials: 'PP', profile_image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop', user_type: 'guide', location: 'Ahmedabad', state: 'Gujarat', preferred_language: 'english' },
+    { id: 'user_4', full_name: 'Rohan Gupta', initials: 'RG', profile_image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop', user_type: 'shop_owner', location: 'Mumbai', state: 'Maharashtra', preferred_language: 'marathi' },
+    { id: 'user_5', full_name: 'Sneha Reddy', initials: 'SR', profile_image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop', user_type: 'farmer', location: 'Hyderabad', state: 'Telangana', preferred_language: 'telugu' },
 ];
 
 const mockChatRooms: ChatRoom[] = [
@@ -164,7 +165,7 @@ export const Chat: React.FC<FeatureComponentProps> = ({ currentUser }) => {
                 <div className="space-y-3">
                     {recentChats.map(user => (
                         <div key={user.id} onClick={() => openChat(user)} className="p-3 bg-white rounded-lg shadow-sm border flex items-center gap-4 cursor-pointer hover:shadow-md transition-shadow">
-                            <img src={user.profile_image} alt={user.full_name} className="w-12 h-12 rounded-full border-2 border-brand-green"/>
+                            <img src={user.profile_image} alt={user.full_name} className="w-12 h-12 rounded-full border-2 border-brand-green object-cover"/>
                             <div className="flex-1"><h3 className="font-semibold">{user.full_name}</h3><p className="text-sm text-gray-500 capitalize">{user.user_type}</p></div>
                         </div>
                     ))}
@@ -186,7 +187,7 @@ export const Chat: React.FC<FeatureComponentProps> = ({ currentUser }) => {
                     {filteredUsers.map(user => (
                         <div key={user.id} className="p-3 bg-white rounded-lg shadow-sm border flex items-center justify-between">
                             <div className="flex items-center gap-3">
-                                <img src={user.profile_image} alt={user.full_name} className="w-12 h-12 rounded-full"/>
+                                <img src={user.profile_image} alt={user.full_name} className="w-12 h-12 rounded-full object-cover"/>
                                 <div><h3 className="font-semibold">{user.full_name}</h3><p className="text-sm text-gray-500">{user.location}</p></div>
                             </div>
                             <button onClick={() => openChat(user)} className="p-2 bg-green-50 rounded-full text-brand-green hover:bg-green-100"><MessageCircle className="w-5 h-5"/></button>
@@ -202,7 +203,7 @@ export const Chat: React.FC<FeatureComponentProps> = ({ currentUser }) => {
                 <div className="bg-gray-50 rounded-2xl shadow-xl w-full max-w-lg h-[80vh] flex flex-col" onClick={e => e.stopPropagation()}>
                     <div className="p-4 border-b flex items-center justify-between bg-white rounded-t-2xl">
                         <div className="flex items-center gap-3">
-                            <img src={selectedChat.profile_image} alt={selectedChat.full_name} className="w-10 h-10 rounded-full" />
+                            <img src={selectedChat.profile_image} alt={selectedChat.full_name} className="w-10 h-10 rounded-full object-cover" />
                             <h3 className="font-bold">{selectedChat.full_name}</h3>
                         </div>
                         <button onClick={() => setSelectedChat(null)} className="p-2 rounded-full hover:bg-gray-100"><X size={20}/></button>

@@ -44,7 +44,7 @@ export const AddLand: React.FC<FeatureComponentProps> = ({ setActiveFeature, cur
   });
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(e.target.files || []);
+    const files = Array.from(e.target.files || []) as File[];
     if (files.length === 0) return;
     setIsUploadingImages(true);
 

@@ -56,7 +56,7 @@ export const AddProduct: React.FC<FeatureComponentProps> = ({ setActiveFeature, 
   }, [currentUser]);
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(e.target.files || []);
+    const files = Array.from(e.target.files || []) as File[];
     if (files.length === 0) return;
     setIsUploadingImages(true);
 
@@ -125,7 +125,7 @@ export const AddProduct: React.FC<FeatureComponentProps> = ({ setActiveFeature, 
           <Card>
             <CardHeader><CardTitle>Product Details</CardTitle></CardHeader>
             <CardContent className="space-y-6">
-              <div><Label>{currentUser?.user_type === "guide" ? "Service Name" : "Product Name"} *</Label><Input required value={formData.product_name} onChange={(e) => setFormData({ ...formData, product_name: e.target.value })} placeholder={currentUser?.user_type === "guide" ? "e.g., Crop Disease Consultation" : "e.g., Organic Wheat Seeds"}/></div>
+              <div><Label>Product Name *</Label><Input required value={formData.product_name} onChange={(e) => setFormData({ ...formData, product_name: e.target.value })} placeholder={currentUser?.user_type === "guide" ? "e.g., Crop Disease Consultation" : "e.g., Organic Wheat Seeds"}/></div>
               <div><Label>Description *</Label><Textarea required value={formData.description} onChange={(e) => setFormData({ ...formData, description: e.target.value })} placeholder="Detailed description..." rows={4}/></div>
               <div className="grid md:grid-cols-2 gap-4">
                 <div><Label>Category *</Label><Select value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value as Product['category'], unit: e.target.value === "consultation" ? "session" : "kg" })}>{currentUser?.user_type === "guide" && <option value="consultation">👨‍🏫 Consultation</option>}<option value="seeds">🌱 Seeds</option><option value="fertilizer">🧪 Fertilizer</option><option value="pesticide">🦟 Pesticide</option><option value="equipment">🚜 Equipment</option><option value="produce">🌾 Produce</option><option value="other">📦 Other</option></Select></div>
