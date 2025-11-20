@@ -92,7 +92,6 @@ export const EditProfileDialog: React.FC<EditProfileDialogProps> = ({ open, onOp
 
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Preferred Language</label>
-                        {/* FIX: Added 'punjabi' to the dropdown to match the updated MockUser type. */}
                         <select name="preferred_language" value={formData.preferred_language} onChange={handleInputChange} className="w-full p-2 border border-gray-300 rounded-md focus:ring-brand-green focus:border-brand-green">
                             <option value="english">English</option>
                             <option value="hindi">Hindi</option>

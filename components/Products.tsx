@@ -32,7 +32,6 @@ const Dialog: React.FC<{open: boolean, onOpenChange: (open: boolean) => void, ch
 const DialogContent: React.FC<{children: React.ReactNode, className?: string}> = ({children, className}) => <div className={`bg-white rounded-lg shadow-xl w-full max-w-lg ${className}`}>{children}</div>;
 const DialogHeader: React.FC<{children: React.ReactNode}> = ({children}) => <div className="p-4 border-b flex items-center justify-between">{children}</div>;
 const DialogTitle: React.FC<{children: React.ReactNode}> = ({children}) => <h2 className="font-bold text-lg">{children}</h2>;
-// FIX: Defined the Label component which was missing and causing compilation errors.
 const Label: React.FC<{ children: React.ReactNode, htmlFor?: string }> = ({ children, htmlFor }) => <label htmlFor={htmlFor} className="block text-sm font-medium text-gray-700 mb-1">{children}</label>;
 // --- END UI COMPONENTS ---
 

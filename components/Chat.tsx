@@ -137,7 +137,6 @@ export const Chat: React.FC<FeatureComponentProps> = ({ currentUser }) => {
                     <option value="guide">👨‍🏫 Guides</option>
                     <option value="shop_owner">🏪 Shop Owners</option>
                 </select>
-                {/* FIX: Expanded language filter options to match the MockUser type for consistency. */}
                 <select value={languageFilter} onChange={e => setLanguageFilter(e.target.value)} className="p-2 border border-gray-300 rounded-md text-sm">
                     <option value="all">All Languages</option>
                     <option value="english">English</option>

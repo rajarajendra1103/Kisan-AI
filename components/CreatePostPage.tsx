@@ -1,8 +1,9 @@
+
 import React from 'react';
 import { FileText } from 'lucide-react';
-import { FEATURES } from '../types';
+import { FEATURES, FeatureComponentProps } from '../types';
 
-export const CreatePostPage: React.FC = () => {
+export const CreatePostPage: React.FC<FeatureComponentProps> = ({}) => {
   const featureInfo = FEATURES.CREATE_POST_PAGE;
   return (
     <div className="p-6 bg-white rounded-2xl shadow-lg">

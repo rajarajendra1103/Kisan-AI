@@ -1,8 +1,9 @@
+
 import React from 'react';
 import { ShoppingCart } from 'lucide-react';
-import { FEATURES } from '../types';
+import { FEATURES, FeatureComponentProps } from '../types';
 
-export const MyOrders: React.FC = () => {
+export const MyOrders: React.FC<FeatureComponentProps> = ({}) => {
   const featureInfo = FEATURES.MY_ORDERS;
   return (
     <div className="p-6 bg-white rounded-2xl shadow-lg">

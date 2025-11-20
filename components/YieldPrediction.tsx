@@ -1,9 +1,9 @@
 
 import React from 'react';
 import { LineChart } from 'lucide-react';
-import { FEATURES } from '../types';
+import { FEATURES, FeatureComponentProps } from '../types';
 
-export const YieldPrediction: React.FC = () => {
+export const YieldPrediction: React.FC<FeatureComponentProps> = ({}) => {
   const featureInfo = FEATURES.YIELD_PREDICTION;
 
   return (

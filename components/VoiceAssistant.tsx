@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { X, Mic, Waves } from 'lucide-react';
-// FIX: The 'LiveSession' type is not exported from '@google/genai'. It has been removed from the import, and the ref that used it has been typed with 'any'.
 import { GoogleGenAI, LiveServerMessage, Modality, Blob as GenAIBlob } from '@google/genai';
 
 // Audio decoding and encoding functions
@@ -88,7 +87,6 @@ export const VoiceAssistant: React.FC<VoiceAssistantProps> = ({ onClose }) => {
             scriptProcessorRef.current = scriptProcessor;
             scriptProcessor.onaudioprocess = (audioProcessingEvent) => {
               const inputData = audioProcessingEvent.inputBuffer.getChannelData(0);
-              // FIX: Corrected the multiplier for Float32 to Int16 conversion from 3278 to 32768.
               const pcmBlob: GenAIBlob = {
                 data: encode(new Uint8Array(new Int16Array(inputData.map(v => v * 32768)).buffer)),
                 mimeType: 'audio/pcm;rate=16000',

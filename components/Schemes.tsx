@@ -1,6 +1,7 @@
+
 import React, { useState, useMemo } from 'react';
 import { FileText, Search, ExternalLink, Filter } from 'lucide-react';
-import { FEATURES } from '../types';
+import { FEATURES, FeatureComponentProps } from '../types';
 
 interface Scheme {
   id: string;
@@ -47,7 +48,7 @@ const mockSchemes: Scheme[] = [
 ];
 
 
-export const Schemes: React.FC = () => {
+export const Schemes: React.FC<FeatureComponentProps> = ({}) => {
   const featureInfo = FEATURES.GOVERNMENT_SCHEMES;
   const [searchQuery, setSearchQuery] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("all");

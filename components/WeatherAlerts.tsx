@@ -1,9 +1,9 @@
 
 import React from 'react';
 import { Sun } from 'lucide-react';
-import { FEATURES } from '../types';
+import { FEATURES, FeatureComponentProps } from '../types';
 
-export const WeatherAlerts: React.FC = () => {
+export const WeatherAlerts: React.FC<FeatureComponentProps> = ({}) => {
   const featureInfo = FEATURES.WEATHER_ALERTS;
 
   return (

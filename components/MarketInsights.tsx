@@ -7,7 +7,6 @@ const crops = ['Wheat', 'Rice', 'Cotton', 'Sugarcane', 'Soybean'];
 const regions = ['Punjab', 'Haryana', 'Uttar Pradesh', 'Maharashtra', 'Madhya Pradesh'];
 
 export const MarketInsights: React.FC = () => {
-  // FIX: Property 'MARKET_INSIGHTS' does not exist on type 'Record<FeatureKey, Feature>'. Corrected to 'MARKET_PRICES'.
   const featureInfo = FEATURES.MARKET_PRICES;
   const [crop, setCrop] = useState('');
   const [region, setRegion] = useState('');
@@ -36,7 +35,6 @@ export const MarketInsights: React.FC = () => {
       const systemInstruction = "You are a senior market analyst specializing in Indian agricultural commodities. Your reports are data-driven, insightful, and easy for farmers to understand.";
 
       const result = await generateContent(prompt, undefined, undefined, systemInstruction);
-      // FIX: The `generateContent` function returns a `GenerateContentResponse` object. The text content is accessed via the `.text` property.
       setInsights(result.text);
     } catch (err) {
       const message = err instanceof Error ? err.message : 'An unknown error occurred.';

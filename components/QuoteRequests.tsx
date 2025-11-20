@@ -1,8 +1,10 @@
+
+
 import React from 'react';
 import { FileText } from 'lucide-react';
-import { FEATURES } from '../types';
+import { FEATURES, FeatureComponentProps } from '../types';
 
-export const QuoteRequests: React.FC = () => {
+export const QuoteRequests: React.FC<FeatureComponentProps> = ({}) => {
   const featureInfo = FEATURES.QUOTE_REQUESTS;
 
   return (

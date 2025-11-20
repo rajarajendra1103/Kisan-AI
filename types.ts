@@ -161,7 +161,6 @@ export interface MockUser {
   user_type?: 'farmer' | 'guide' | 'shop_owner' | 'customer' | 'expert';
   phone_number?: string;
   farm_size_acres?: number;
-  // FIX: Added 'punjabi' to the list of preferred languages to resolve the type error.
   preferred_language?: 'english' | 'hindi' | 'tamil' | 'telugu' | 'kannada' | 'marathi' | 'punjabi';
   tracked_crops?: string[];
 }

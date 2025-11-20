@@ -2,7 +2,6 @@ import React, { useState, useCallback, useRef } from 'react';
 import { Leaf, UploadCloud, Loader2, Bot, Globe } from 'lucide-react';
 import { generateContent } from '../services/geminiService';
 import { fileToBase64 } from '../utils/fileUtils';
-// FIX: Import MockUser to use for type casting.
 import { FeatureComponentProps, FEATURES, MockUser } from '../types';
 
 interface GroundingReference {
@@ -142,7 +141,6 @@ export const DiseaseDiagnosis: React.FC<FeatureComponentProps> = ({ currentUser 
             <div className="relative">
               <select
                 value={language}
-                // FIX: Cast the language value from the select onChange event to the correct type to resolve the TypeScript error.
                 onChange={(e) => setLanguage(e.target.value as NonNullable<MockUser['preferred_language']>)}
                 className="bg-white border border-gray-300 rounded-md text-sm py-1.5 pl-3 pr-8 appearance-none focus:ring-brand-green focus:border-brand-green"
               >

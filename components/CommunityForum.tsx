@@ -5,7 +5,6 @@ import { Users } from 'lucide-react';
 import { FEATURES } from '../types';
 
 export const CommunityForum: React.FC = () => {
-  // FIX: Property 'COMMUNITY_FORUM' does not exist on type 'Record<FeatureKey, Feature>'. Replaced with 'CHAT' which is the key for community features.
   const featureInfo = FEATURES.CHAT;
 
   return (

@@ -1,8 +1,9 @@
+
 import React from 'react';
 import { Settings as SettingsIcon } from 'lucide-react';
-import { FEATURES } from '../types';
+import { FEATURES, FeatureComponentProps } from '../types';
 
-export const Settings: React.FC = () => {
+export const Settings: React.FC<FeatureComponentProps> = ({}) => {
   const featureInfo = FEATURES.SETTINGS;
 
   return (
