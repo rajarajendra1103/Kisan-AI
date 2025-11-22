@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kisan AI</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%8C%B1%3C%2Ftext%3E%3C%2Fsvg%3E">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
     <!-- Suppress Tailwind CDN production warning -->
     <script>
       (function() {
@@ -20,33 +27,24 @@
       })();
     </script>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%8C%B1%3C%2Ftext%3E%3C%2Fsvg%3E">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    
-    <!-- Configure Tailwind BEFORE loading the script to ensure custom theme is applied -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind = {
-        config: {
-          theme: {
-            extend: {
-              colors: {
-                'brand-green': '#6B8E23',
-                'brand-beige': '#F5F5DC',
-                'brand-gold': '#FFD700',
-              },
-              fontFamily: {
-                sans: ['PT Sans', 'sans-serif'],
-              }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-green': '#6B8E23',
+              'brand-beige': '#F5F5DC',
+              'brand-gold': '#FFD700',
+            },
+            fontFamily: {
+              sans: ['PT Sans', 'sans-serif'],
             }
           }
         }
       }
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
       body {
