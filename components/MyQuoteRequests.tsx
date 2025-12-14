@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { FileText } from 'lucide-react';
 import { FEATURES, FeatureComponentProps } from '../types';
@@ -20,4 +19,5 @@ export const MyQuoteRequests: React.FC<FeatureComponentProps> = ({}) => {
         <p>Here you will be able to track all your submitted quote requests and view responses from sellers.</p>
       </div>
     </div>
-  
+  );
+};
