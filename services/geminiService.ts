@@ -1,10 +1,16 @@
 import { GoogleGenAI, Part, GenerateContentResponse } from "@google/genai";
 
-if (!process.env.API_KEY) {
-  throw new Error("API_KEY environment variable not set");
-}
+let ai: GoogleGenAI | null = null;
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const getAiClient = () => {
+  if (!ai) {
+    if (!process.env.API_KEY) {
+      throw new Error("API_KEY environment variable not set");
+    }
+    ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  }
+  return ai;
+};
 
 /**
  * Generates content using the Gemini API.
@@ -25,6 +31,8 @@ export const generateContent = async (
   configOverrides: any = {}
 ): Promise<GenerateContentResponse> => {
   try {
+    // Lazily initialize the client
+    const client = getAiClient();
     const modelName = 'gemini-2.5-flash';
 
     const parts: Part[] = [];
@@ -49,7 +57,7 @@ export const generateContent = async (
       config.responseSchema = responseSchema;
     }
 
-    const response = await ai.models.generateContent({
+    const response = await client.models.generateContent({
       model: modelName,
       contents: { parts },
       config: Object.keys(config).length > 0 ? config : undefined,
